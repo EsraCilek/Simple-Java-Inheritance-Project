@@ -1,0 +1,4 @@
+Otomobil Id: prolab2.Otomobil@6e77cd0f|Marka:aad|Hız:123|Yolcu Sayısı:34|Yakıt Türü:sda|Tekerlek Sayısı:123|Üretim Yılı:123|Renk:aads|Fiyat:431-
+Otomobil Id: prolab2.Otomobil@16e96d4c|Marka:d|Hız:123|Yolcu Sayısı:34|Yakıt Türü:sda|Tekerlek Sayısı:123|Üretim Yılı:123|Renk:aads|Fiyat:431-
+Bisiklet Id: prolab2.Bisiklet@12d28728|Marka:d|Hız:123|Yolcu Sayısı:34|Tekerlek Sayısı123|Üretim Yılı:123241|Renk:aads|Fiyat:431-
+UcanGemi Id: prolab2.UcanGemi@62309ba4|Marka:d|Hız:123|Tekerlekler:123|Fiyat:5544|Renk:aads|Üretim Yılı:123241|Yolcu Sayısı:34|Yakıt Türü:sda-

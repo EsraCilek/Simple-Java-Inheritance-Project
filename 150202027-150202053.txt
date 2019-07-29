@@ -1,0 +1,1030 @@
+ARAÇ SINIFI------------------------------------------------------------------
+
+package prolab2;
+
+
+public class Arac {
+    private String marka;
+    private int hiz;
+    private int yolcu_sayisi;
+    private int üretim_yili;
+    private String renk;
+    private int fiyat;
+
+    public Arac(String marka, int hiz, int yolcu_sayisi, int üretim_yili, String renk, int fiyat) {
+        this.marka = marka;
+        this.hiz = hiz;
+        this.yolcu_sayisi = yolcu_sayisi;
+        this.üretim_yili = üretim_yili;
+        this.renk = renk;
+        this.fiyat = fiyat;
+    }
+
+    public Arac() {
+    }
+
+    
+    public String getMarka() {
+        return marka;
+    }
+
+   
+    public void setMarka(String marka) {
+        this.marka = marka;
+    }
+
+   
+    public int getHız() {
+        return hiz;
+    }
+
+ 
+    public void setHız(int hız) {
+        this.hiz = hiz;
+    }
+
+    
+  
+    public int getYolcu_sayisi() {
+        return yolcu_sayisi;
+    }
+
+  
+    public void setYolcu_sayisi(int yolcu_sayisi) {
+        this.yolcu_sayisi = yolcu_sayisi;
+    }
+
+   
+
+   
+    public int getÜretim_yili() {
+        return üretim_yili;
+    }
+
+   
+    public void setÜretim_yili(int üretim_yili) {
+        this.üretim_yili = üretim_yili;
+    }
+
+   
+    public String getRenk() {
+        return renk;
+    }
+
+  
+    public void setRenk(String renk) {
+        this.renk = renk;
+    }
+
+  
+    public int getFiyat() {
+        return fiyat;
+    }
+
+   
+    public void setFiyat(int fiyat) {
+        this.fiyat = fiyat;
+    }
+    
+    
+}
+
+-----------------------------------------------------------------------------------------------
+
+BİSİKLET SINIFI------------------------------------------------------------------
+
+
+package prolab2;
+
+
+public class Bisiklet extends KaraTasitlari{
+
+    public Bisiklet(String marka, int hız, int yolcu_sayisi, int tekerlekler, int üretim_yili, String renk, int fiyat) {
+        super(marka, hız, yolcu_sayisi, tekerlekler, üretim_yili, renk, fiyat);
+    }
+
+    public Bisiklet() {
+    }
+
+    @Override
+    public String YazBike(String marka, int hız, int yolcu_saiyisi, int tekerlekler, int üretim_yili, String renk, int fiyat) {
+        return super.YazBike(marka, hız, yolcu_saiyisi, tekerlekler, üretim_yili, renk, fiyat); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+    
+}
+
+----------------------------------------------------------------------------------------------------
+
+DENİZTASITLARI SINIFI------------------------------------------------------------------
+
+
+package prolab2;
+
+
+public class DenizTasitlari extends Arac {
+
+    public DenizTasitlari(String marka, int hız, int yolcu_sayisi, int üretim_yili, String renk, int fiyat) {
+        super(marka, hız, yolcu_sayisi, üretim_yili, renk, fiyat);
+    }
+
+    public DenizTasitlari() {
+    }
+    
+    
+
+  
+    
+    
+    
+  
+    
+    public String YazGemi(String marka, int hız, int yolcu_sayisi,String yakit_turu, int üretim_yili, String renk, int fiyat){
+        
+        return "Marka:"+ marka+ "|"+"Hız:" + hız + "|"+"Yolcu Sayısı:" +yolcu_sayisi +"Yakı Türü:"+yakit_turu+ "|"+"Üretim Yılı:" + üretim_yili + "|"+"Renk:" + renk + "|"+"Fiyat:" + fiyat +"-";
+    }
+    
+    
+}
+
+---------------------------------------------------------------------------------------------------------
+
+GEMİ SINIFI------------------------------------------------------------------
+
+
+package prolab2;
+
+import java.util.Scanner;
+
+
+public class  Gemi extends DenizTasitlari{
+    String yakit_turu;
+
+    public Gemi(String marka,String yakit_turu, int hiz, int yolcu_sayisi, int üretim_yili, String renk, int fiyat) {
+        super(marka,  hiz, yolcu_sayisi, üretim_yili, renk, fiyat);
+        this.yakit_turu=yakit_turu;
+    }
+
+    public Gemi() {
+    }
+
+ 
+    
+   
+
+    @Override
+    public String YazGemi(String marka, int hız, int yolcu_sayisi, String yakit_turu, int üretim_yili, String renk, int fiyat) {
+        return super.YazGemi(marka, hız, yolcu_sayisi, yakit_turu, üretim_yili, renk, fiyat); //To change body of generated methods, choose Tools | Templates.
+    }
+
+  
+
+      
+    
+}
+
+---------------------------------------------------------------------------------------------------------------
+
+HAVATAŞITLARI SINIFI------------------------------------------------------------------
+
+
+package prolab2;
+
+
+public class HavaTasitlari extends Arac {
+
+    private int tekerlekler;
+    public HavaTasitlari(String marka, int hiz, int yolcu_sayisi, int tekerlekler, int üretim_yili, String renk, int fiyat) {
+        super(marka, hiz, yolcu_sayisi, üretim_yili, renk, fiyat);
+        this.tekerlekler=tekerlekler;
+    }
+
+    public HavaTasitlari() {
+    }
+    
+    
+    
+   
+    
+    public String YazUcak(String marka,String yakit_turu, int hız, int yolcu_sayisi, int tekerlekler, int üretim_yili, String renk, int fiyat){
+        
+        return "Marka:"+ marka+ "|"+"Hız:" + hız + "|"+"Yolcu Sayısı:" +yolcu_sayisi + "|"+"Yakıt Türü:"+yakit_turu +
+                "|"+"Tekerlek Sayısı:" + tekerlekler + "|"+"Üretim Yılı:" + üretim_yili + "|"+"Renk:" + renk + "|"+"Fiyat:" + fiyat + "-";
+    }
+    
+   
+}
+
+-----------------------------------------------------------------------------------------------------
+
+HAVADENİZ TAŞITLARI SINIFI------------------------------------------------------------------
+
+
+package prolab2;
+
+public abstract class HavaDenizTasitlari {
+    
+    private String marka;
+     private int hiz;
+    private int tekerlekler;
+    private int fiyat;
+    private String renk;
+    private int uretim_yili;
+    private int yolcu_sayisi;
+    private String yakit_turu;
+    
+
+    public HavaDenizTasitlari(String marka, int hiz, int tekerlekler, int fiyat, String renk, int uretim_yili, int yolcu_sayisi, String yakit_turu) {
+        this.marka = marka;
+        this.hiz = hiz;
+        this.tekerlekler = tekerlekler;
+        this.fiyat = fiyat;
+        this.renk = renk;
+        this.uretim_yili = uretim_yili;
+        this.yolcu_sayisi = yolcu_sayisi;
+        this.yakit_turu = yakit_turu;
+    }
+
+    public HavaDenizTasitlari() {
+    }
+    
+    abstract String YazUcanGemi(String marka, int hiz, int tekerlekler, int fiyat, String renk, int uretim_yili, int yolcu_sayisi, String yakit_turu);
+
+    
+    public String getMarka() {
+        return marka;
+    }
+
+   
+    public void setMarka(String marka) {
+        this.marka = marka;
+    }
+
+   
+    public int getHiz() {
+        return hiz;
+    }
+
+  
+    public void setHiz(int hiz) {
+        this.hiz = hiz;
+    }
+
+    
+    public int getTekerlekler() {
+        return tekerlekler;
+    }
+
+   
+    public void setTekerlekler(int tekerlekler) {
+        this.tekerlekler = tekerlekler;
+    }
+
+  
+    public int getFiyat() {
+        return fiyat;
+    }
+
+  
+    public void setFiyat(int fiyat) {
+        this.fiyat = fiyat;
+    }
+
+  
+    public String getRenk() {
+        return renk;
+    }
+
+
+    public void setRenk(String renk) {
+        this.renk = renk;
+    }
+
+ 
+    public int getUretim_yili() {
+        return uretim_yili;
+    }
+
+ 
+    public void setUretim_yili(int uretim_yili) {
+        this.uretim_yili = uretim_yili;
+    }
+
+   
+    public int getYolcu_sayisi() {
+        return yolcu_sayisi;
+    }
+
+  
+    public void setYolcu_sayisi(int yolcu_sayisi) {
+        this.yolcu_sayisi = yolcu_sayisi;
+    }
+
+  
+    public String getYakit_turu() {
+        return yakit_turu;
+    }
+
+  
+    public void setYakit_turu(String yakit_turu) {
+        this.yakit_turu = yakit_turu;
+    }
+    
+    
+    
+    
+}
+
+-----------------------------------------------------------------------------------------------------
+
+KARA TAŞITLARI SINIFI------------------------------------------------------------------
+
+//SuperClass
+package prolab2;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+
+
+public  class KaraTasitlari extends Arac {
+    private int tekerlekler;
+
+    public KaraTasitlari(String marka, int hiz, int yolcu_sayisi, int tekerlekler, int üretim_yili, String renk, int fiyat) {
+        super(marka, hiz, yolcu_sayisi, üretim_yili, renk, fiyat);
+        this.tekerlekler=tekerlekler;
+    }
+
+    public KaraTasitlari() {
+    }
+    
+   
+    
+    
+    public String YazOto(String marka, int hız, int yolcu_sayisi,String yakit_turu, int tekerlekler, int üretim_yili, String renk, int fiyat){
+        
+        return "Marka:" +marka+ "|" + "Hız:" + hız + "|"+ "Yolcu Sayısı:" +yolcu_sayisi + "|"+"Yakıt Türü:" +yakit_turu + "|"
+                +"Tekerlek Sayısı:"+ tekerlekler + "|"+"Üretim Yılı:" + üretim_yili + "|"+"Renk:" + renk + "|"+"Fiyat:" + fiyat +"-";
+    }
+    
+    public String YazBike(String marka, int hız, int yolcu_sayisi, int tekerlekler, int üretim_yili, String renk, int fiyat){
+        return "Marka:"+ marka+ "|"+"Hız:" + hız + "|"+"Yolcu Sayısı:" +yolcu_sayisi + "|"+"Tekerlek Sayısı" + tekerlekler + "|"
+                +"Üretim Yılı:" + üretim_yili + "|"+"Renk:" + renk + "|"+"Fiyat:" + fiyat+ "-";
+    }
+    
+
+
+
+   
+}
+
+----------------------------------------------------------------------------------------------------
+
+OTOMOBİL SINIFI------------------------------------------------------------------
+
+//subclass
+package prolab2;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+
+public class Otomobil extends KaraTasitlari{
+    
+    private String yakit_turu;
+
+    public  Otomobil(String marka, int hiz, int yolcu_sayisi, int tekerlekler, int üretim_yili, String renk, int fiyat,String yakit_türü) {
+        
+        super(marka, hiz, yolcu_sayisi, tekerlekler, üretim_yili, renk, fiyat);
+          this.yakit_turu=yakit_turu;         
+    }
+
+    @Override
+    public String YazOto(String marka, int hız, int yolcu_sayisi,String yakit_turu, int tekerlekler, int üretim_yili, String renk, int fiyat) {
+        return super.YazOto(marka, hız, yolcu_sayisi,yakit_turu, tekerlekler, üretim_yili, renk, fiyat); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+    
+    
+   Otomobil() {
+        
+    }
+    
+    
+
+        
+    
+}
+    
+--------------------------------------------------------------------------------------------------------------
+
+PROLAB2 SINIFI--------------------------------------------------------------------------------
+
+
+package prolab2;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+public class Prolab2 {
+
+    
+    public static void main(String[] args) {
+        String  marka1;
+        String secim;
+        
+        Scanner keyboard= new Scanner(System.in);
+        
+        FileWriter writer=null;
+       
+        
+        try {
+            writer= new FileWriter("deneme.txt",true);
+       
+           
+            
+            
+        } catch (IOException ex) {
+            System.out.println("dosya açılırken IO hatası oluştu");
+        }
+        finally{
+            if(writer !=null){
+                try {
+                    writer.close();
+                } catch (IOException ex) {
+                    System.out.println("dosya kapatılırken hata oluştu");
+                }
+            }
+            
+            
+        
+    }
+        
+-----------------------------------------------------------------------------------------------------------
+
+UÇAK SINIFI------------------------------------------------------------------
+
+
+package prolab2;
+
+import java.util.Scanner;
+
+
+public class Ucak extends HavaTasitlari{
+    private String yakit_turu;
+
+    public Ucak(String marka,String yakit_turu, int hiz, int yolcu_sayisi, int tekerlekler, int üretim_yili, String renk, int fiyat) {
+        super(marka, hiz, yolcu_sayisi, tekerlekler, üretim_yili, renk, fiyat);
+        this.yakit_turu=yakit_turu;
+    }
+
+    
+
+    public Ucak() {
+    }
+
+    @Override
+    public String YazUcak(String marka, String yakit_turu, int hız, int yolcu_sayisi, int tekerlekler, int üretim_yili, String renk, int fiyat) {
+        return super.YazUcak(marka, yakit_turu, hız, yolcu_sayisi, tekerlekler, üretim_yili, renk, fiyat); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+ 
+   
+}
+
+------------------------------------------------------------------------------------------------------------------
+
+UÇAN GEMİ SINIFI------------------------------------------------------------------
+
+
+package prolab2;
+
+
+public  class UcanGemi extends HavaDenizTasitlari {
+
+    public UcanGemi(String marka, int hiz, int tekerlekler, int fiyat, String renk, int uretim_yili, int yolcu_sayisi, String yakit_turu) {
+        super(marka, hiz, tekerlekler, fiyat, renk, uretim_yili, yolcu_sayisi, yakit_turu);
+    }
+
+    public UcanGemi() {
+    }
+    
+    
+
+
+    
+    String YazUcanGemi(String marka, int hiz, int tekerlekler, int fiyat, String renk, int uretim_yili, int yolcu_sayisi, String yakit_turu) {
+        return "Marka:"+ marka+ "|"+"Hız:" + hiz + "|"+"Tekerlekler:" +tekerlekler + "|"+"Fiyat:"+fiyat +
+                "|"+"Renk:" + renk + "|"+"Üretim Yılı:" + uretim_yili + "|"+"Yolcu Sayısı:" + yolcu_sayisi + "|"+"Yakıt Türü:" + yakit_turu + "-"; 
+        
+    }
+
+    
+}
+
+-------------------------------------------------------------------------------------------------------------
+
+
+
+
+FORM 2 TASARIM KODLARI---------------------------------------------------------------------------
+
+
+package prolab2;
+
+import java.awt.Event;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author doguk
+ */
+public class Form2 extends javax.swing.JFrame {
+    
+    FileWriter writer=null;
+   
+
+     String marka;
+     int uretim_yili;
+     int fiyat;
+    int yolcu_sayisi;
+     String renk;
+     int hiz;
+     int tekerlekler;
+     String yakit_turu;
+     String a;
+     String b;
+     String c;
+     String d;
+     String e;
+     String flag="0";
+     
+     
+
+    
+    public Form2() {
+        initComponents();
+        
+  
+
+    
+    }
+   
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        Marka = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        YakıtTuru = new javax.swing.JTextField();
+        Renk = new javax.swing.JTextField();
+        Fiyat = new javax.swing.JTextField();
+        YolcuSayisi = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        UretimYili = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        Hiz = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        TekerlekSayisi = new javax.swing.JTextField();
+        Otoekle = new javax.swing.JButton();
+        BisEkle = new javax.swing.JButton();
+        GemiEkle = new javax.swing.JButton();
+        UcakEkle = new javax.swing.JButton();
+        UcanGemiEkle = new javax.swing.JButton();
+        Donus = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Veri Girişinde Bulunacağınız Aracı Seçiniz");
+
+        jLabel2.setText("Marka");
+
+        jLabel3.setText("Üretim Yılı");
+
+        YakıtTuru.setToolTipText("");
+
+        Renk.setToolTipText("");
+
+        Fiyat.setToolTipText("");
+
+        YolcuSayisi.setToolTipText("");
+
+        jLabel4.setText("Yakıt Türü");
+
+        jLabel5.setText("Fiyat");
+
+        jLabel6.setText("Yolcu Sayısı");
+
+        jLabel7.setText("Renk");
+
+        jLabel8.setText("Hız");
+
+        jLabel9.setText("Tekerlek Sayısı");
+
+        Otoekle.setText("Otomobil");
+        Otoekle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OtoekleActionPerformed(evt);
+            }
+        });
+
+        BisEkle.setText("Bisiklet");
+        BisEkle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BisEkleActionPerformed(evt);
+            }
+        });
+
+        GemiEkle.setText("Gemi");
+        GemiEkle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GemiEkleActionPerformed(evt);
+            }
+        });
+
+        UcakEkle.setText("Uçak");
+        UcakEkle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UcakEkleActionPerformed(evt);
+            }
+        });
+
+        UcanGemiEkle.setText("Uçan Gemi");
+        UcanGemiEkle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UcanGemiEkleActionPerformed(evt);
+            }
+        });
+
+        Donus.setText("Bir Önceki Menüye Dön");
+        Donus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DonusActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("kaydet");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Donus)
+                .addGap(81, 81, 81))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Marka, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(jLabel2)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(UretimYili, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(jLabel3)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(jLabel5)
+                                .addGap(77, 77, 77)
+                                .addComponent(jLabel6)
+                                .addGap(68, 68, 68)
+                                .addComponent(jLabel7))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(Fiyat, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(YolcuSayisi, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Renk, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(90, 90, 90)
+                                .addComponent(jLabel1)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addComponent(jLabel8)
+                                .addGap(76, 76, 76)
+                                .addComponent(jLabel4))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton1)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(Hiz, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(YakıtTuru, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel9))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(TekerlekSayisi, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(404, 404, 404)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Otoekle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BisEkle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(GemiEkle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(UcakEkle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(UcanGemiEkle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Marka, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fiyat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(YolcuSayisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Renk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Hiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UretimYili, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(YakıtTuru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TekerlekSayisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Otoekle)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BisEkle)
+                .addGap(18, 18, 18)
+                .addComponent(GemiEkle)
+                .addGap(18, 18, 18)
+                .addComponent(UcakEkle)
+                .addGap(18, 18, 18)
+                .addComponent(UcanGemiEkle)
+                .addGap(18, 18, 18)
+                .addComponent(Donus)
+                .addContainerGap(57, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void DonusActionPerformed(java.awt.event.ActionEvent evt) {                                      
+       NewJFrame Form1 = new NewJFrame();
+       Form1.setVisible(true);
+        dispose();
+    }                                     
+
+    private void OtoekleActionPerformed(java.awt.event.ActionEvent evt) {                                        
+
+        
+           // Otomobil otomobil1= new Otomobil(marka, hiz, yolcu_sayisi, tekerlekler, uretim_yili, renk, fiyat, yakit_turu)
+            marka = String.valueOf(Marka.getText());
+            uretim_yili = (Integer.parseInt(String.valueOf(UretimYili.getText())));
+            fiyat = (Integer.parseInt(String.valueOf(Fiyat.getText())));
+            yolcu_sayisi = (Integer.parseInt(String.valueOf(YolcuSayisi.getText())));
+            renk = String.valueOf(Renk.getText());
+            hiz = (Integer.parseInt(String.valueOf(Hiz.getText())));
+            tekerlekler = (Integer.parseInt(String.valueOf(TekerlekSayisi.getText())));
+            yakit_turu = String.valueOf(YakıtTuru.getText());
+            flag="1";
+            
+            //KaraTasitlari otomobil1 = new Otomobil(marka, hiz, yolcu_sayisi, tekerlekler, uretim_yili, renk, fiyat, yakit_turu);
+           // a = marka+ "|" + hiz + "|" +yolcu_sayisi + "|" + tekerlekler + "|" + uretim_yili + "|" + renk + "|" + fiyat ;
+            
+            
+        
+    
+             
+         
+    }                                       
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+       // FileWriter writer=null;
+       
+        
+        try {
+            writer= new FileWriter("arackayitlari.txt",true);
+            
+            
+       if( flag.equals("1")){
+           //KaraTasitlari otomobil1 ;
+           Otomobil otomobil1=new Otomobil(marka, hiz, yolcu_sayisi, tekerlekler, uretim_yili, renk, fiyat, yakit_turu);
+           writer.write("Otomobil Id: "+otomobil1+ "|");
+          writer.write(otomobil1.YazOto(marka, hiz, yolcu_sayisi,yakit_turu, tekerlekler, uretim_yili, renk, fiyat));
+           writer.write("\n");
+          // writer.write("\n");
+           
+           
+           
+       } 
+       else if(flag.equals("2"))
+       {
+          Gemi gemi2= new Gemi(marka,yakit_turu,hiz,yolcu_sayisi,uretim_yili,renk,fiyat);
+           writer.write("Gemi Id: "+gemi2+"|");
+         writer.write(gemi2.YazGemi(marka, hiz, yolcu_sayisi,yakit_turu, uretim_yili, renk, fiyat));
+           writer.write("\n");
+         // writer.write("\n");
+          
+       }
+       else if (flag.equals("3")){
+           
+           Bisiklet bisiklet2=new Bisiklet(marka, hiz, yolcu_sayisi, tekerlekler, uretim_yili, renk, fiyat);
+           writer.write("Bisiklet Id: "+bisiklet2+"|");
+            writer.write(bisiklet2.YazBike(marka, hiz, yolcu_sayisi, tekerlekler, uretim_yili, renk, fiyat));
+           writer.write("\n");
+           //writer.write("\n");
+       }
+       else if(flag.equals("4")){
+           
+           Ucak ucak2=new Ucak(marka,yakit_turu,hiz,yolcu_sayisi,tekerlekler,uretim_yili,renk,fiyat);
+           writer.write("Ucak Id: "+ucak2+"|");
+           writer.write(ucak2.YazUcak(marka, yakit_turu, hiz, yolcu_sayisi, tekerlekler, uretim_yili, renk, fiyat));
+           writer.write("\n");
+          // writer.write("\n");
+       }
+       else if(flag.equals("5")){
+           UcanGemi ucangemi2= new UcanGemi(marka,hiz,tekerlekler,fiyat,renk,uretim_yili,yolcu_sayisi,yakit_turu);
+           writer.write("UcanGemi Id: "+ucangemi2+"|");
+           writer.write(ucangemi2.YazUcanGemi(marka, hiz, tekerlekler, fiyat, renk, uretim_yili, yolcu_sayisi, yakit_turu));
+           writer.write("\n");
+                  
+       }
+            
+            
+        } catch (IOException ex) {
+            System.out.println("dosya açılırken IO hatası oluştu");
+        }
+        finally{
+            if(writer !=null){
+                try {
+                    writer.close();
+                } catch (IOException ex) {
+                    System.out.println("dosya kapatılırken hata oluştu");
+                }
+            }
+
+    }
+    }                                        
+
+    private void GemiEkleActionPerformed(java.awt.event.ActionEvent evt) {                                         
+       
+           // Gemi gemi2=new Gemi(marka, hiz, uretim_yili, yolcu_sayisi, fiyat, renk, yakit_turu);
+               marka = String.valueOf(Marka.getText());
+            uretim_yili = (Integer.parseInt(String.valueOf(UretimYili.getText())));
+            fiyat = (Integer.parseInt(String.valueOf(Fiyat.getText())));
+            yolcu_sayisi = (Integer.parseInt(String.valueOf(YolcuSayisi.getText())));
+            renk = String.valueOf(Renk.getText());
+            hiz = (Integer.parseInt(String.valueOf(Hiz.getText())));
+            //tekerlekler = (Integer.parseInt(String.valueOf(TekerlekSayisi.getText())));
+            yakit_turu = String.valueOf(YakıtTuru.getText());
+            flag="2";
+            
+            
+    }                                        
+
+    private void BisEkleActionPerformed(java.awt.event.ActionEvent evt) {                                        
+            marka = String.valueOf(Marka.getText());
+            uretim_yili = (Integer.parseInt(String.valueOf(UretimYili.getText())));
+            fiyat = (Integer.parseInt(String.valueOf(Fiyat.getText())));
+            yolcu_sayisi = (Integer.parseInt(String.valueOf(YolcuSayisi.getText())));
+            renk = String.valueOf(Renk.getText());
+            hiz = (Integer.parseInt(String.valueOf(Hiz.getText())));
+            tekerlekler = (Integer.parseInt(String.valueOf(TekerlekSayisi.getText())));
+            //yakit_turu = String.valueOf(YakıtTuru.getText());
+            flag="3";
+            
+    }                                       
+
+    private void UcakEkleActionPerformed(java.awt.event.ActionEvent evt) {                                         
+            marka = String.valueOf(Marka.getText());
+            uretim_yili = (Integer.parseInt(String.valueOf(UretimYili.getText())));
+            fiyat = (Integer.parseInt(String.valueOf(Fiyat.getText())));
+            yolcu_sayisi = (Integer.parseInt(String.valueOf(YolcuSayisi.getText())));
+            renk = String.valueOf(Renk.getText());
+            hiz = (Integer.parseInt(String.valueOf(Hiz.getText())));
+            tekerlekler = (Integer.parseInt(String.valueOf(TekerlekSayisi.getText())));
+            yakit_turu = String.valueOf(YakıtTuru.getText());
+            flag="4";
+            
+    }                                        
+
+    private void UcanGemiEkleActionPerformed(java.awt.event.ActionEvent evt) {                                             
+            marka = String.valueOf(Marka.getText());
+            uretim_yili = (Integer.parseInt(String.valueOf(UretimYili.getText())));
+            fiyat = (Integer.parseInt(String.valueOf(Fiyat.getText())));
+            yolcu_sayisi = (Integer.parseInt(String.valueOf(YolcuSayisi.getText())));
+            renk = String.valueOf(Renk.getText());
+            hiz = (Integer.parseInt(String.valueOf(Hiz.getText())));
+            tekerlekler = (Integer.parseInt(String.valueOf(TekerlekSayisi.getText())));
+            yakit_turu = String.valueOf(YakıtTuru.getText());
+            flag="5";
+
+    }                                            
+
+    
+
+     
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+      
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Form2().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton BisEkle;
+    private javax.swing.JButton Donus;
+    private javax.swing.JTextField Fiyat;
+    private javax.swing.JButton GemiEkle;
+    private javax.swing.JTextField Hiz;
+    private javax.swing.JTextField Marka;
+    private javax.swing.JButton Otoekle;
+    private javax.swing.JTextField Renk;
+    private javax.swing.JTextField TekerlekSayisi;
+    private javax.swing.JButton UcakEkle;
+    private javax.swing.JButton UcanGemiEkle;
+    private javax.swing.JTextField UretimYili;
+    private javax.swing.JTextField YakıtTuru;
+    private javax.swing.JTextField YolcuSayisi;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    // End of variables declaration                   
+
+   
+}
+
+-------------------------------------------------------------------------------------------------------
